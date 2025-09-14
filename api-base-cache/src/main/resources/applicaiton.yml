@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 1000ms  # 设置超时，用于触发降级
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+  cache:
+    type: composite
+
+logging:
+  level:
+    com.example.demo.config: DEBUG
